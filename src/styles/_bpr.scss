@@ -1,0 +1,22 @@
+@mixin bpr($pointA, $pointB) {
+    $done: false;
+
+    @each $keyA, $size in $sizes {
+        @if $pointA == $keyA {
+            @each $keyB, $sizeMin in $sizesMin {
+                @if $pointB == $keyB {
+                    @media (min-width: map-get($sizesMin, $pointA)) and (max-width: map-get($sizes, $pointB)) {
+                        @content;
+                    }
+                    $done: true;
+                }
+            }
+        }
+    }
+
+    @if $done == false {
+        @media (min-width: $pointB) and (max-width: $pointA) {
+            @content;
+        }
+    }
+} ;

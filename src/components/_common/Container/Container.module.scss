@@ -1,0 +1,46 @@
+.Container {
+    width: 100%;
+    max-width: var(--containerXlAlt);
+    margin: 0 auto;
+    padding-left: var(--gutterWidth);
+    padding-right: var(--gutterWidth);
+
+    @include bp(lg) {
+        max-width: var(--containerLg);
+    }
+
+    // @include bp(md) {
+    //     max-width: var(--containerMd);
+    // }
+
+    @include bp(sm) {
+        max-width: var(--containerSm);
+    }
+
+    &--alt {
+        @include bp(md) {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        @include bp(sm) {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        @include bp(xs) {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+    }
+}
+
+.Full {
+    max-width: 100%;
+}
+
+.FullMobile {
+    @include bp(sm) {
+        max-width: 100%;
+    }
+}

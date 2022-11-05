@@ -1,0 +1,18 @@
+@mixin bp($point) {
+    $done: false;
+
+    @each $key, $size in $sizes {
+        @if $point == $key {
+            @media (max-width: $size) {
+                @content;
+            }
+            $done: true;
+        }
+    }
+
+    @if $done == false {
+        @media (max-width: $point) {
+            @content;
+        }
+    }
+} ;

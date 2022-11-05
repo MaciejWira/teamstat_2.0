@@ -1,0 +1,33 @@
+.Col {
+    padding: 0 var(--gutterWidth);
+}
+
+@for $i from 1 through 12 {
+    $width: 100% * calc($i / 12);
+    $widthFives: 100% * calc($i / 10);
+    .Col-#{$i} {
+        width: $width;
+        flex: 0 0 $width;
+    }
+    .Col--fives.Col-#{$i} {
+        width: $widthFives;
+        flex: 0 0 $widthFives;
+    }
+
+    @each $key, $size in $sizes {
+        $width: 100% * calc($i / 12);
+        $widthFives: 100% * calc($i / 10);
+        .Col.Col-#{$key}-#{$i} {
+            @include bp($size) {
+                width: $width;
+                flex: 0 0 $width;
+            }
+        }
+        .Col--fives.Col-#{$key}-#{$i} {
+            @include bp($size) {
+                width: $widthFives;
+                flex: 0 0 $widthFives;
+            }
+        }
+    }
+}

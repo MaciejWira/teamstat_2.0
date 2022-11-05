@@ -1,0 +1,73 @@
+@mixin gutterChange($gutter) {
+    .Row {
+        margin-left: -#{$gutter}px;
+        margin-right: -#{$gutter}px;
+    }
+    .Col {
+        padding-left: #{$gutter}px;
+        padding-right: #{$gutter}px;
+    }
+}
+
+@mixin mobile {
+    .Mobile {
+        display: none;
+        @include bp(sm) {
+            display: block;
+        }
+    }
+}
+
+@mixin mobileXs {
+    .Mobile {
+        display: none;
+        @include bp(xs) {
+            display: block;
+        }
+    }
+}
+
+@mixin mobileInline {
+    .Mobile {
+        display: none;
+        @include bp(sm) {
+            display: inline;
+        }
+    }
+}
+
+@mixin desktop {
+    .Desktop {
+        display: block;
+        @include bp(sm) {
+            display: none;
+        }
+    }
+}
+
+@mixin desktopXs {
+    .Desktop {
+        display: block;
+        @include bp(xs) {
+            display: none;
+        }
+    }
+}
+
+@mixin desktopInline {
+    .Desktop {
+        display: inline;
+        @include bp(sm) {
+            display: none;
+        }
+    }
+}
+
+@mixin desktopInlineXs {
+    .DesktopXs {
+        display: inline;
+        @include bp(xs) {
+            display: none;
+        }
+    }
+}

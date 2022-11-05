@@ -1,0 +1,18 @@
+@mixin bpMin($point) {
+    $done: false;
+
+    @each $key, $size in $sizesMin {
+        @if $point == $key {
+            @media (min-width: $size) {
+                @content;
+            }
+            $done: true;
+        }
+    }
+
+    @if $done == false {
+        @media (min-width: $point) {
+            @content;
+        }
+    }
+} ;

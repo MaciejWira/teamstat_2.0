@@ -1,0 +1,65 @@
+.Paragraph {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.Main {
+    font-size: 21px;
+    line-height: 1.52;
+    letter-spacing: -0.2px;
+    color: var(--textLight);
+
+    @include bp(sm) {
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: -0.152381px;
+    }
+
+    &-dark {
+        color: var(--textDark);
+    }
+}
+
+.Large {
+    font-size: 24px;
+    line-height: 1.25;
+    letter-spacing: -0.8px;
+
+    @include bp(sm) {
+        font-size: 18px;
+        line-height: 1.33;
+        letter-spacing: -0.3px;
+    }
+}
+
+.Intro {
+    font-size: 19px;
+    line-height: 1.58;
+    letter-spacing: -0.2px;
+
+    @include bp(sm) {
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: -0.152381px;
+    }
+}
+
+.Small {
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+    color: var(--textLight);
+    margin-bottom: 22px;
+
+    @include bp(sm) {
+        margin-bottom: 15px;
+    }
+}
+
+.Bullet {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    // color: var(--textLighter);
+}
